@@ -1,0 +1,13 @@
+$primary: #1a73e8;
+$box-shadow: rgb(220,220,220);
+$input-background: rgb(248,248,248);
+
+.primary-button {
+    font-size: large;
+    border: 0px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: $primary;
+    color: white;
+    cursor: pointer;
+}

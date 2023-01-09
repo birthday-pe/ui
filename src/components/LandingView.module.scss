@@ -1,0 +1,51 @@
+$blueText : #1a73e8;
+
+.para {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(105,105,105);
+    width:94vw;
+    overflow-x: ellipsis;
+    padding-right: 15px; 
+    font-family: 'roboto';
+}
+
+.para-section {
+  padding-right: 15px;
+}
+ 
+ 
+.scroll-down-animation{
+  font-size: 40px;
+	color: #e00;
+	animation: beat 0.5s infinite alternate;
+	transform-origin: center;
+}
+
+/* Heart beat animation */
+@keyframes beat{
+	to { transform: translate(0px, 13px); }
+}
+
+
+.neon {
+  color:rgb(255,255,255,0.8);
+  font-size: 45px;
+  line-height: 2;
+  font-family: 'Roboto';
+  text-shadow: 0px 0px 20px cyan, 0px 0px 40px cyan, 0px 0px 60px cyan,0px 0px 80px cyan, 0px 0px 100px cyan;
+}
+
+.sendMessage:hover {
+  outline: 0px;
+  border-color: silver;
+}
+
+.sendMessage:focus {
+  outline: 0px;
+  border-color: silver;
+}

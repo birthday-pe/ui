@@ -1,0 +1,23 @@
+@import './../css/common.scss';
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.about-me {
+    width: 30vw;
+    background-color: white;
+    padding: 20px 20px;
+    border: 0px;
+    outline: none;
+    background-color: $input-background;
+}
+
+.nameHead {
+    color: $primary;
+    font-weight: 300;
+}

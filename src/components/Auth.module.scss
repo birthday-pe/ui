@@ -1,0 +1,120 @@
+$primary: #1a73e8;
+
+.heading {
+    color: $primary;
+    padding: 0px;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    top: 0px;
+    position: fixed;
+    min-height: 50vh;
+}
+
+
+.input {
+    border: 0px;
+    font-size: large;
+    padding: 10px 15px; 
+    margin: 10px;
+    border-radius: 5px;
+    outline: 0px !important;
+    background-color: white; 
+}
+
+// .input:focus {
+//     box-shadow: 0px 0.1px 300px 7px $primary;
+// }
+
+
+.button {
+    @extend .input; 
+
+    background-color: $primary;
+    color: white;
+    padding: 9px 15px;
+    cursor: pointer;
+}
+
+ 
+ 
+
+.span {
+    cursor: pointer;
+}
+
+.providers {
+    @extend .flexbox;
+    z-index: 0;
+    padding: 0px;
+    padding-top: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.providers-out {
+    z-index: 9999;
+    position: fixed;
+    width: 98vw;
+    top: 22px;
+    margin-bottom: 0px;
+}
+
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+
+
+ 
+
+.google-btn {
+    //border: 1px solid black;
+    transform: 'translate(0px, -20px';
+    box-shadow: 14px 14px 400px 20px silver;
+  width: 205px;
+  height: 52px;
+  background-color: $white;
+  border-radius: 18px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  cursor: pointer;
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px; 
+    border-radius: 2px;
+    background-color: $white;
+
+    background-color: $white;
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -7px;
+    width: 35px;
+    height: 35px;
+
+    background-color: $white;
+  }
+  .btn-text {
+    float: right; 
+    position: static;
+    color: $google-blue;
+    font-size: 17px; 
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    transform: translate(0, -3px);
+  }
+  &:hover {
+   // box-shadow: 0 0 6px $google-blue;
+  }
+ 
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
