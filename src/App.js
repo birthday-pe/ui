@@ -21,7 +21,7 @@ import { Col, Row } from 'antd';
  
 function App() {
 
-  //this object will have the auth-data as well as the firestore-document-data for the user
+  //this object will have the auth-data as well as the firestore-document-data for the use
   const [ user, setUser ] = useState(null);
 
   const [ userDocUpdated, setUserDocUpdated ] = useState(false);
