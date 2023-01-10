@@ -19,6 +19,12 @@ $blueText : #1a73e8;
     padding: 10px 15px; 
 }
 
+.link:hover {
+    text-decoration: none;
+    color: $blueText;
+    padding: 10px 15px; 
+}
+
 .link-selected {
     text-decoration: none; 
     color: $blueText;
@@ -27,3 +33,10 @@ $blueText : #1a73e8;
     border-top: 2px solid $blueText; 
 }
 
+.link-selected:hover {
+    text-decoration: none; 
+    color: $blueText;
+    padding: 10px 15px;
+    color: $blueText; 
+    border-top: 2px solid $blueText; 
+}

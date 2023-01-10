@@ -1,19 +1,11 @@
 import {
-  FacebookFilled,
-  FacebookOutlined,
-  InstagramFilled,
   InstagramOutlined,
-  PhoneFilled,
   PhoneOutlined,
-  RightCircleFilled, TwitterOutlined, WhatsAppOutlined,
 } from "@ant-design/icons";
 import { Timeline, Radio, Input } from "antd";
-import React, { useState } from "react";
-import { steps } from "../assets";
+import React, { useState } from "react"; 
 import style from "./LandingView.module.scss";
 import "./css/common.scss";
-import { toaster } from "./toaster";
-import { messageEmpty, messageSent, somethingWentWrong } from "../toasterMessages";
 
 const rightSideBtnCss = {
   transform: "translate(0, 6px)",
@@ -24,7 +16,7 @@ const rightSideBtnCss = {
 };
 
 const dateCss = {
-  color: '#0BDA51', fontWeight: '400', backgroundColor: 'grey', color: 'white', padding: '5px 16px', borderRadius: '5px'
+  color: '#0BDA51', fontWeight: '400', backgroundColor: '#8D93A0', color: 'white', padding: '5px 16px', borderRadius: '5px'
 }
 
 function LandingView(props) {
@@ -78,54 +70,12 @@ function LandingView(props) {
               Managing virtual birthday celebrations for teams that prefer
               working remotely.
             </div>
-            <br />
-           
-                       <br />    
-                       
-            <div
-              align="center"
-              style={{
-                // backgroundColor: "black",
-
-                fontWeight: "100",
-                fontSize: '20px',
-                width: "100vw",
-                color: "black",
-                marginLeft: "-15px",
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                alignItems: 'center'
-              }}
-            >
-               <img src="https://images.pexels.com/photos/793522/pexels-photo-793522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                         style={{width: '33%', borderRadius: '10px', transform: 'translate(170px, 0px)', zIndex: '99'}}></img>
-                       
-                       <div align="left" className={style.neonm} style={{fontFamily: 'Roboto', width: '50vw', fontWeight: '100', zIndex: '9999'}}> 
-                               
-
-                            From selecting personalized gifts to helping you schedule and organize virtual celebrations, we have the resources to help you celebrate your employees in style. 
-                          
-                          </div>
-            </div>
-
-
+          
+            
             {/* <span>Scroll &nbsp;&nbsp; <DownCircleFilled className={style['scroll-down-animation']} style={{color: '#1a73e8'}} /></span> */}
           </div>
         </div>
-      </div>
-      <div
-        className={style["para-section"]}
-        onClick={(e) => {
-          onParaClick(e.target.id);
-        }}
-        onScroll={(e) => {
-          document.getElementById("3").scrollIntoView({
-            behavior: "smooth",
-          });
-          e.target.style.height = "auto";
-        }}
-      >
+      </div> 
         <div
           className={style.para}
           id="2"
@@ -138,14 +88,14 @@ function LandingView(props) {
             style={{
               color: "rgb(105,105,105)",
               fontSize: "25px",
-              fontWeight: "300",
+              fontWeight: "200",
             }}
           >
             <h3 style={{ fontWeight: "500", color: "#1a73e8" }}>
               How Does It Work?
             </h3>
             <>
-              <div>Suppose one of your employees, Joe, has his birthday on <span style={{...dateCss, backgroundColor: '#1a73e8'}}>9th September</span></div><br/><br/>
+              <div style={{fontSize: '20px'}}>Suppose one of your employees, Joe, has his birthday on <span style={{...dateCss}}>9th September</span></div><br/><br/>
               <Timeline align='left' style={{width: '80%'}} mode={mode}>
                 <Timeline.Item  style={{fontSize: '20px'}} label={<span style={{...dateCss}}>2nd September</span>}>
                   A week before Joe's birthday, we notify Joe's manager/team-leader via an automated phone call
@@ -165,49 +115,56 @@ function LandingView(props) {
             events/games/gifts and make memories!
                 </Timeline.Item>
               </Timeline>
-            </> 
-            <br/><br/>
+            </>  
            
           </div>
 
           {/* <br />A virtual birthday party can be fun and a memorable way to come
           together from anywhere to sing happy birthday, play funny games and
           share memories in the joy of another year well lived. */}
-        </div>
-      </div>
+        </div> 
+
+        <br/>
+     
       
+            <br/> 
+            
+            <br/> 
+        
 
       <div
             align="left"
               style={{
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: "space-around",
-                alignItems: "center",
+                justifyContent: "space-around"
               }}
             >
             
               <span style={{ fontWeight: "200", width: '40vw'}}>
               <h1 style={{ fontWeight: "500", color: "#1a73e8" }}>Gifts!</h1>
               <span style={{ fontWeight: "200", fontSize: '20px'}}>We offer a wide selection of unique and thoughtful items for all age
-          groups. From personalized gifts to fun and creative ideas, we have
-          something for everyone</span>
+          groups.
+          <br/>
+          From personalized gifts to fun and creative ideas, we have
+          something for everyone.</span>
           <br/> 
           
               </span>
 
               <span style={{ fontWeight: "200", width: '40vw'}}>
-              <h1 style={{ fontWeight: "500", color: "#1a73e8" }}>Visit our blog</h1>
-          <span style={{ fontWeight: "200", fontSize: '20px'}}>Looking for ideas to make your birthday celebration extra special?
-          <br /> Our blog is a great resource for inspiration and tips on how to
-          plan the perfect virtual or in-person party</span>
+              <h1 align="right" style={{ fontWeight: "500", color: "#1a73e8" }}>Visit our blog</h1>
+          <div align="right"  style={{ fontWeight: "200", fontSize: '20px'}}>Collection of ideas to make your birthday celebration extra special.
+          <br /> Our blogs are a great resource for inspiration and tips on how to
+          plan the perfect virtual or in-person party.</div>
           <br />  
           
               </span> 
             </div>
-            <br/>
-            <br/>
-            <br/>
+            <br/> 
+            <br/> 
+            
+            <br/> 
             <div
             align="left"
               style={{
@@ -249,13 +206,7 @@ function LandingView(props) {
         Donate as low as 0.5% of your birthday party budget to make a difference
         in the lives of hunger and poverty striken children.
       </div> */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <br/>
        
     </>
   );
