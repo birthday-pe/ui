@@ -44,4 +44,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Docker push
-      run: docker push realneeleshsharma/birthdaype
+      run: docker push realneeleshsharma/birthdaype:latest
