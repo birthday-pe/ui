@@ -17,13 +17,20 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
+  docker-login:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Docker login
+      run: docker login -u realneeleshsharma -p docker@555
+    
   docker-push:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: login docker and push image
-      
-    - run: docker login -u realneeleshsharma -p docker@555    
-    - run: docker push realneeleshsharma/my-image-name
+    - name: Docker push
+      run: docker push realneeleshsharma/my-image-name
