@@ -33,4 +33,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Docker push
-      run: docker push realneeleshsharma/my-image-name:$(date +%s)
+      run: docker push my-image-name:$(date +%s)
