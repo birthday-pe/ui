@@ -8,7 +8,7 @@ import style from './Dashboard.module.scss';
 function DashBoard(props) {
 
     const [ isManager, setIsManager ] = useState(false);
-    const [ parties, setParties ] = useState([]);
+    const [ parties, setParties ] = useState(["f"]);
 
     useEffect(() => {
       getAuth().onAuthStateChanged((data) => {

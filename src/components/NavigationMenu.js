@@ -7,7 +7,7 @@ import { users } from '../dbCollections';
 
 function NavigationMenu(props) {
 
-   const { user } = props;
+   const { user, authenticated } = props;
 
    const whichTab = () => {
     switch(window.location.href.split('/')[window.location.href.split('/').length - 1]){
@@ -27,17 +27,6 @@ function NavigationMenu(props) {
     const [ activeInfo, setActiveInfo ] = useState(whichTab());
 
     const [ dobExists, setDobExists ] = useState(true)
-
-    useEffect(() => {
-      if(user) {
-        getDocument(users, user?.email).then((res) => {
-          if(!res._document?.data.value.mapValue.fields?.dob){
-            setDobExists(false);
-          }
-          })
-      }
-    }, [user]);
-    
     
 
     return (
@@ -50,7 +39,6 @@ function NavigationMenu(props) {
           }}
           >BirthdayPe 
           &nbsp;
-           <WarningFilled id='set-dob-warning' style={{color: 'orange', fontSize: '22px', display:  dobExists ? 'none' : 'inline-block'}}/> 
           </Link>
 
  
@@ -69,30 +57,30 @@ function NavigationMenu(props) {
           <Link></Link>
           <Link></Link>
 
-          <Link to="/dashboard"
+          {authenticated === null ? null : <Link to="/dashboard"
           className={ activeInfo == 'Dashboard' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Dashboard');
-          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Dashboard</Link>
+          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Dashboard</Link>}
 
-          <Link to="/gifts" 
+{authenticated === null ? null :<Link to="/gifts" 
           className={ activeInfo == 'Gifts' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Gifts');
-          }}><span style={{opacity: activeInfo == 'Gifts' ? 1 : 0}}> </span>Gifts </Link>
+          }}><span style={{opacity: activeInfo == 'Gifts' ? 1 : 0}}> </span>Gifts </Link>}
           
             
           
-          <Link to="/blog"
+          {authenticated === null ? null :<Link to="/blog"
           className={ activeInfo == 'Blog' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Blog');
-          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Blog</Link>
-          <Link to="/profile" 
+          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Blog</Link>}
+          {authenticated === null ? null :<Link to="/profile" 
           className={style.link}
           onClick={(e)=>{
             setActiveInfo('Hero');
-          }}><img src={user?.photoURL} style={{width: '40px', height: '40px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> 
+          }}><img src={user?.photoURL} style={{width: '40px', height: '40px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> }
         </div>
     );
 }

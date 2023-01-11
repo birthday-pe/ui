@@ -1,4 +1,5 @@
 import {
+  BorderBottomOutlined,
   InstagramOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
@@ -6,6 +7,7 @@ import { Timeline, Radio, Input } from "antd";
 import React, { useState } from "react"; 
 import style from "./LandingView.module.scss";
 import "./css/common.scss";
+import { Link } from "react-router-dom";
 
 const rightSideBtnCss = {
   transform: "translate(0, 6px)",
@@ -29,12 +31,11 @@ function LandingView(props) {
   };
 
   const [mode, setMode] = useState('left');
-  const onChange = (e) => {
-    setMode(e.target.value);
-  };
+  
 
   return (
     <>
+    <h1 align="left" style={{fontWeight: '400'}} className={style.heading}>BirthdayPe</h1>
       <div
         className={style["para-section"]}
         onClick={(e) => {
@@ -49,33 +50,32 @@ function LandingView(props) {
       >
         <div className={style.para} id="1">
           <div 
-              align="center"
-          
-          style={{ transform: "translate(0px, -70px)" }}>
-            <br />
-            <br />
-            <br />
-            <div
+              align="center">
+            <h1
               align="center"
               style={{
                 backgroundColor: "#1a73e8",
-                fontWeight: "300",
+                fontWeight: "400",
                 fontSize: '27px',
                 width: "100vw",
-                padding: "15px 0px",
                 color: "white",
                 marginLeft: "-15px",
+                marginTop: '0px',
+                padding: '10px 0px'
               }}
             >
-              Managing virtual birthday celebrations for teams that prefer
-              working remotely.
-            </div>
+              We manage birthday celebrations for your employees
+            </h1>
           
             
             {/* <span>Scroll &nbsp;&nbsp; <DownCircleFilled className={style['scroll-down-animation']} style={{color: '#1a73e8'}} /></span> */}
           </div>
         </div>
       </div> 
+
+      <br/>
+
+
         <div
           className={style.para}
           id="2"
@@ -86,33 +86,40 @@ function LandingView(props) {
           <div
           align="center"
             style={{
-              color: "rgb(105,105,105)",
+              color: "silver",
               fontSize: "25px",
               fontWeight: "200",
             }}
-          >
-            <h3 style={{ fontWeight: "500", color: "#1a73e8" }}>
-              How Does It Work?
-            </h3>
+          > 
             <>
-              <div style={{fontSize: '20px'}}>Suppose one of your employees, Joe, has his birthday on <span style={{...dateCss}}>9th September</span></div><br/><br/>
+            <br/>
+
+             <br/>
               <Timeline align='left' style={{width: '80%'}} mode={mode}>
-                <Timeline.Item  style={{fontSize: '20px'}} label={<span style={{...dateCss}}>2nd September</span>}>
-                  A week before Joe's birthday, we notify Joe's manager/team-leader via an automated phone call
-                  <br/><br/>
-                   On the automated phone call, we ask you if you want to schedule a meeting by pressing a single button on the phone!
+                <Timeline.Item  style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Join us</span>}>
+                  Register your organisation with an easy two step process
+                  <br/> 
+                  <Link style={{fontWeight: '400'}}><sub>Register here</sub></Link>
+                   <br/>
                    <br/>
                 </Timeline.Item>
-                <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>3rd September - 8th September</span>}>
-                  We notify Joe that a virtual birthday party has been scheduled for him.
-                  <br/><br/>
-                  A virtual celebration party link is generated and is shared with the manager/team-leader who can further share it with the team, even before the birthday date, so that the team members can plan gifts/wishes for Joe on BirthdayPe
-                </Timeline.Item> 
-                <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>9th September</span>}>
-                  The team joins the virtual party
-                  <br/><br/>
-                  Experience an engaging, full of fun, virtual celebration on the scheduled date with
-            events/games/gifts and make memories!
+                <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Set up a Birthday Plan</span>}>
+                Setting up a plan is a one time process and you only have to choose what you want to add to the birthday plan for all your employees, we take care of the delivery, easy!!
+                   <br/>
+                   <br/>
+                   A birthday plan may include 
+                   <ul>
+                    <li>Scheduling Automatic Birthday Wishes</li>
+                    <li>Premium Gift Kits</li>
+                    <li>eGift Cards</li>
+                    <li>Product/Service Membership Plans</li>
+                    <li>Virtual Birthday Party</li> 
+                   </ul>  
+<br/>  
+                </Timeline.Item>
+                
+                <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Sit Back</span>}>
+                  We deliver, without failure, on the birthday of every employee, as per your plan
                 </Timeline.Item>
               </Timeline>
             </>  
