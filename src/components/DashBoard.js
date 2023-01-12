@@ -7,6 +7,8 @@ import style from './Dashboard.module.scss';
 
 function DashBoard(props) {
 
+    // to be edited as per the new db scheme
+
     const [ isManager, setIsManager ] = useState(false);
     const [ parties, setParties ] = useState(["f"]);
 
