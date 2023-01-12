@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { doc, getFirestore, setDoc, getDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { doc, getFirestore, setDoc, getDoc, collection, getDocs, query } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDOYC0bU8-N9jk5Y5RRN4OTucuIzBIz9Cw",
@@ -25,7 +25,8 @@ export const getDocument = (collec, documentId) => {
     return getDoc(docRef);
 }
 
-export const updateDocument = (collec, documentId, newDataObjectToBeMerged) => {
+export const updateOrCreateDocument = async (collec, documentId, newDataObjectToBeMerged) => {
+    // always pass author:email in the newDataObjectToBeMerged, used to the rule in sequirity rules for firestore
     const docRef = doc(db, collec, documentId);
-    return setDoc(docRef, newDataObjectToBeMerged, { merge: true });
+    return setDoc(docRef, { ...newDataObjectToBeMerged}, { merge: true });
 }

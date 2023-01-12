@@ -4,16 +4,17 @@ import style from './Individuals.module.scss';
 import { getAuth, isSignInWithEmailLink, sendSignInLinkToEmail, signInWithEmailLink } from 'firebase/auth';
 import { toaster } from '../toaster';
 import { getUserLoggedInStatus, userLoggedInStatusKey, userSignInEmailKey } from '../../sessionStorage';
-import { getDocument, updateDocument } from '../../firebase/db';
+import { getDocument, updateOrCreateDocument } from '../../firebase/db';
 import { users } from '../../dbCollections';
 import { somethingWentWrong, updatedSuccess } from '../../toasterMessages';
 import { Button, Card, DatePicker, Input } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+import { DashOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useParams } from 'react-router-dom';
 import { customActionCodeSettings } from '../../firebase/signInEmailConfig';
 import Loader from '../Loader';
 import NavigationMenu from '../NavigationMenu';
-import IndividualDashboard from './IndividualDashboard';
+import Dashboard from '../../components/DashBoard';
+import DashBoard from '../../components/DashBoard';
  
 const auth = getAuth();
 
@@ -30,7 +31,6 @@ function Individuals(props){
 
     const [dob, setDob] = useState(null);
     const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
     const [userEmail, setUserEmail] = useState(null);
 
     const [ loggedIn, setLoggedIn ] = useState(getUserLoggedInStatus());
@@ -89,7 +89,7 @@ function Individuals(props){
   const proceed = () => {
     document.getElementById("proceed-btn-loader").style.display =
                   "inline-block";
-                updateDocument(org, userEmail, { dob: dob })
+                updateOrCreateDocument(org, userEmail, { dob: dob, author: email })
                   .then((res) => {
                     toaster(1, updatedSuccess);
 
@@ -107,8 +107,8 @@ function Individuals(props){
         //<div> 
         isUserDobSet == null ? <Loader/> :
         isUserDobSet ?
-        <div>
-            <IndividualDashboard />
+        <div> 
+            <DashBoard />
         </div> :
         loggedIn !== 'true'  ?
         <>
@@ -121,7 +121,7 @@ function Individuals(props){
             <br/>  
             <h2 style={{fontWeight: '500'}}>Email sent at <br/> <span style={{color: 'grey'}}>{window.localStorage.getItem(userSignInEmailKey)}</span></h2>
             <br/>
-            Please check your inbox and complete the sign in process 
+            You can close this window now
             <br/>
             <br/>
             <br/>

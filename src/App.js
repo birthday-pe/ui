@@ -3,18 +3,15 @@ import './App.css';
 import LandingView from './components/LandingView';
 import NavigationMenu from './components/NavigationMenu';
 import { HashRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
-import { getDocument } from './firebase/db';
 import Profile from './components/useProfile/Profile';
 import {getUserLoggedInStatus} from './sessionStorage';
 import { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
-import { users } from './dbCollections';
 import Blogs from './components/blogs/Blogs';
 import Blog from './components/blogs/Blog';
 
 import { Col, Row } from 'antd';
 import Individuals from './components/userSignup/Individuals';
-import IndividualDashboard from './components/userSignup/IndividualDashboard';
  
 function App() {
 
@@ -43,6 +40,7 @@ function App() {
           {getUserLoggedInStatus() === 'true' ?
     <>
         <BrowserRouter>
+        <NavigationMenu />
         <Routes> 
         <Route exact path="/" element={<>
            <LandingView  />

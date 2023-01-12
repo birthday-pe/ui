@@ -1,8 +1,8 @@
+import { Card } from 'antd';
 import { getAuth } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { users } from '../dbCollections';
-import { getDocument } from '../firebase/db';
-import Card from './Card';
+import { getDocument } from '../firebase/db'; 
 import style from './Dashboard.module.scss';
 
 function DashBoard(props) {
