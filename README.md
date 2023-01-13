@@ -1,4 +1,4 @@
-# This project is built using 
+# Technologies used in this project 
 
 ## Firebase
 ### Firestore
