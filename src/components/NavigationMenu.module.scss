@@ -11,24 +11,25 @@ $blueText : #1a73e8;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 999999;
 }
 
 .link {
     text-decoration: none;
     color: $blueText;
-    padding: 10px 15px; 
+    padding: 10px 10px; 
 }
 
 .link:hover {
     text-decoration: none;
     color: $blueText;
-    padding: 10px 15px; 
+    padding: 10px 10px; 
 }
 
 .link-selected {
     text-decoration: none; 
     color: $blueText;
-    padding: 10px 15px;
+    padding: 10px 10px;
     color: $blueText; 
     border-top: 2px solid $blueText; 
 }
@@ -36,7 +37,7 @@ $blueText : #1a73e8;
 .link-selected:hover {
     text-decoration: none; 
     color: $blueText;
-    padding: 10px 15px;
+    padding: 10px 10px;
     color: $blueText; 
     border-top: 2px solid $blueText; 
 }

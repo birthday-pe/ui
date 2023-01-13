@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import style from './NavigationMenu.module.scss';
 import { Link, useParams } from 'react-router-dom';
-import { WarningFilled } from '@ant-design/icons';
+import { UserAddOutlined, WarningFilled } from '@ant-design/icons';
 import { getDocument } from '../firebase/db';
 import { users } from '../dbCollections';
 
@@ -15,8 +15,6 @@ function NavigationMenu(props) {
         return 'Home';
       case 'gifts':
         return 'Gifts';
-      case 'dashboard':
-        return 'Dashboard';
       case 'blog':
         return 'Blog';
       default:
@@ -57,17 +55,17 @@ function NavigationMenu(props) {
           <Link></Link>
           <Link></Link>
 
-          {authenticated === null ? null : <Link to="/dashboard"
+          {/* {authenticated === null ? null : <Link to="/dashboard"
           className={ activeInfo == 'Dashboard' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Dashboard');
-          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Dashboard</Link>}
+          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Dashboard</Link>} */}
 
 {authenticated === null ? null :<Link to="/gifts" 
           className={ activeInfo == 'Gifts' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Gifts');
-          }}><span style={{opacity: activeInfo == 'Gifts' ? 1 : 0}}> </span>Gifts </Link>}
+          }}><span style={{opacity: activeInfo == 'Gifts' ? 1 : 0}}> </span>Catalogue</Link>}
           
             
           
@@ -80,7 +78,7 @@ function NavigationMenu(props) {
           className={style.link}
           onClick={(e)=>{
             setActiveInfo('Hero');
-          }}><img src={user?.photoURL} style={{width: '40px', height: '40px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> }
+          }}><img src={user?.photoURL ? user.photoURL : 'https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'} style={{width: '40px', height: '40px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> }
         </div>
     );
 }

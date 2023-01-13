@@ -47,7 +47,6 @@ function Individuals(props){
             signInWithEmailLink(auth, emailForSignIn, window.location.href)
               .then((result) => {
                 // Clear email from storage.
-                window.localStorage.removeItem(userSignInEmailKey);
                 localStorage.setItem(userLoggedInStatusKey, 'true');
                 window.location.reload();
                 // You can access the new user via result.user
@@ -70,6 +69,7 @@ function Individuals(props){
           } else {
             setUserEmail(data.email);
             getDocument(org, data.email).then((res) => {
+              console.log(res);
               if (
                   res._document?.data.value.mapValue.fields?.dob
               ) {
@@ -81,7 +81,6 @@ function Individuals(props){
               setIsUserDobSet(false);
             });
           }
-         
         });
       }, []);
 
@@ -89,7 +88,7 @@ function Individuals(props){
   const proceed = () => {
     document.getElementById("proceed-btn-loader").style.display =
                   "inline-block";
-                updateOrCreateDocument(org, userEmail, { dob: dob, author: email })
+                updateOrCreateDocument(org, userEmail, { dob: dob, author: window.localStorage.getItem(userSignInEmailKey) })
                   .then((res) => {
                     toaster(1, updatedSuccess);
 
@@ -128,7 +127,8 @@ function Individuals(props){
             <br/>
           </div>
 
-          <div align="center" style={{display: emailSent ? 'none' : 'block'}}>
+          <div align="center" style={{display: 
+                window.localStorage.getItem(userSignInEmailKey) || emailSent ? 'none' : 'block'}}>
             <NavigationMenu authenticated={null} />
             <br/>
             <br/>

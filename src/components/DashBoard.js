@@ -13,13 +13,13 @@ function DashBoard(props) {
     const [ parties, setParties ] = useState(["f"]);
 
     useEffect(() => {
-      getAuth().onAuthStateChanged((data) => {
-        getDocument(users, data.email).then((res) => {
-          if(res._document.data.value.mapValue.fields.manager){
-              setIsManager(true);
-          }
-        });
-      });
+    //   getAuth().onAuthStateChanged((data) => {
+    //     getDocument(users, data.email).then((res) => {
+    //       if(res._document.data.value.mapValue.fields.manager){
+    //           setIsManager(true);
+    //       }
+    //     });
+    //   });
     }, []);
 
     return (

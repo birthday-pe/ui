@@ -12,6 +12,7 @@ import Blog from './components/blogs/Blog';
 
 import { Col, Row } from 'antd';
 import Individuals from './components/userSignup/Individuals';
+import Catalogue from './components/catalogue/Catalogue';
  
 function App() {
 
@@ -61,7 +62,7 @@ function App() {
             <Profile user={user === {} ? null : user} />
           </>} />
           <Route path="/gifts" element={<>
-            <Profile user={user === {} ? null : user} />
+            <Catalogue />
           </>} />
         </Routes>
       </BrowserRouter>

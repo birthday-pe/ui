@@ -104,7 +104,7 @@ function LandingView(props) {
                    <br/>
                 </Timeline.Item>
                 <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Set up a Birthday Plan</span>}>
-                Setting up a plan is a one time process and you only have to choose what you want to add to the birthday plan for all your employees, we take care of the delivery, easy!!
+                Setting up a plan is a one time process. Choose items from our riveting catalogue to add to the birthday plan for your employees, we take care of the smooth delivery, easy!!
                    <br/>
                    <br/>
                    A birthday plan may include 
