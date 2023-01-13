@@ -1,19 +1,36 @@
-USE FIREBASE
+# This project is built using 
 
+## Firebase
+### Firestore
+To store data in a document database
 
+### Firebase authentication
+To sign up users using email verified signup and signin process
 
+## CI/CD workflow on github
+Using github Actions,
+steps in CI/CD workflow:
+  - check code sequrity
+  - runs unit test cases
+  - creates a docker image using the defined Dockerfile
+  - pushes the docker image to docker hub
 
+## Docker
+Utilizes docker for containerization of the app
 
+## Javascript
+ReactJS for UI
 
+## CSS
+SCSS, CSS modules
 
+## Ant Design
+As a helper frontend components library
 
+## Deployment
+Currently it is hosted on github pages, 
+Eventual plan is to deploy it to either GCP container optimized Compute Engine or App Engine
 
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
