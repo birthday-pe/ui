@@ -61,19 +61,17 @@ function NavigationMenu(props) {
             setActiveInfo('Dashboard');
           }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Dashboard</Link>} */}
 
-{authenticated === null ? null :<Link to="/gifts" 
+{<Link to="/gifts" 
           className={ activeInfo == 'Gifts' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Gifts');
           }}><span style={{opacity: activeInfo == 'Gifts' ? 1 : 0}}> </span>Catalogue</Link>}
           
-            
-          
-          {authenticated === null ? null :<Link to="/blog"
+         <Link to="/blog"
           className={ activeInfo == 'Blog' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Blog');
-          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Blog</Link>}
+          }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Blog</Link>
           {authenticated === null ? null :<Link to="/profile" 
           className={style.link}
           onClick={(e)=>{

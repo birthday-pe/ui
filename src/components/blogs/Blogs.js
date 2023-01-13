@@ -32,6 +32,10 @@ function Blogs(props) {
         align='left'
         >
             <br/>
+            <br/>
+            <br/>
+            <br/>
+            <marquee>Blogs content should be around employee welfare,</marquee> 
             <br/> 
             <h1 align="center" style={{ color: '#1a73e8', padding: '30px 0px', fontWeight: '500'}}>Articles</h1>
             {

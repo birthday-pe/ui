@@ -114,8 +114,10 @@ function LandingView(props) {
                     <li>eGift Cards</li>
                     <li>Product/Service Membership Plans</li>
                     <li>Virtual Birthday Party</li> 
-                   </ul>  
-<br/>  
+                   </ul>   
+                  <Link to={'/gifts'} style={{fontWeight: '400'}}><sub>Visit Catalogue</sub></Link>
+                   <br/>
+                   <br/>
                 </Timeline.Item>
                 
                 <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Sit Back</span>}>

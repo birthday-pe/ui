@@ -69,6 +69,7 @@ function App() {
       </>
     :
     <BrowserRouter>
+        <NavigationMenu authenticated={null} />
         <Routes> 
         <Route exact path="/" element={<>
            <LandingView  />
@@ -76,17 +77,17 @@ function App() {
            <Route path="/:org/indi" element={<>
            <Individuals/>
           </>} />
-          <Route path="/blog" element={<>
-            <Individuals/>
+          <Route path="/blog" element={<> 
+            <Blogs/>
           </>} />
-          <Route path="/blog/:id" element={<>
-            <Individuals/>
+          <Route path="/blog/:id" element={<> 
+            <Blog/>
           </>} />
           <Route path="/profile" element={<>
             <Individuals/>
           </>} />
           <Route path="/gifts" element={<>
-            <Individuals/>
+            <Catalogue />
           </>} />
           </Routes>
       </BrowserRouter>}
