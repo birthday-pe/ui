@@ -4,7 +4,6 @@ $blueText : #1a73e8;
     width: 100vw;
     position: fixed;
     left: 0px;
-    padding: 0px 0px;
     top: 0px;
     background-color:#f8f9fa;
     overflow-y: scroll;
@@ -12,32 +11,35 @@ $blueText : #1a73e8;
     align-items: center;
     justify-content: space-between;
     z-index: 999999;
-}
+} 
 
 .link {
     text-decoration: none;
-    color: $blueText;
-    padding: 10px 15px; 
+    color: #374151;
+    padding: 7px 15px;
 }
 
 .link:hover {
     text-decoration: none;
-    color: $blueText;
-    padding: 10px 15px; 
+    //color: $blueText;
+    color: #374151;
+    padding: 7px 15px; 
 }
 
 .link-selected {
     text-decoration: none; 
     color: $blueText;
-    padding: 10px 15px;
-    color: $blueText; 
-    border-top: 2px solid $blueText; 
+    padding: 7px 15px;
+    color: #374151;
+    // color: $blueText; 
+    // border-top: 2px solid $blueText; 
 }
 
 .link-selected:hover {
     text-decoration: none; 
     color: $blueText;
-    padding: 10px 15px;
-    color: $blueText; 
-    border-top: 2px solid $blueText; 
+    padding: 7px 15px;
+    color: #374151;
+    // color: $blueText; 
+    //border-top: 2px solid $blueText; 
 }

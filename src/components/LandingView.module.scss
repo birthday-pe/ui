@@ -1,10 +1,16 @@
-$blueText : #1a73e8;
+$blueText : #00FFEF;
 
 .heading {
   color: $blueText;
   padding: 10px;
   margin: 0px;
   margin-top: -5px;
+}
+
+.link {
+  text-decoration: none;
+  color: $blueText;
+  padding: 10px 15px; 
 }
 
 

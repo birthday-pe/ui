@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { backgroundColor } from '../../App';
 import { webLogs } from '../../dbCollections';
 import { getAllDocuments } from '../../firebase/db';
 import { somethingWentWrong } from '../../toasterMessages';
@@ -37,7 +38,7 @@ function Blogs(props) {
             <br/>
             <marquee>Blogs content should be around employee welfare,</marquee> 
             <br/> 
-            <h1 align="center" style={{ color: '#1a73e8', padding: '30px 0px', fontWeight: '500'}}>Articles</h1>
+            <h1 align="center" style={{ color: backgroundColor, padding: '30px 0px', fontWeight: '500'}}>Articles</h1>
             {
                 blogs?.map(blog => {
                     return <><BlogCard title={blog.title} id={blog.id} /><br/></>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { backgroundColor } from '../App';
 
 function Loader(props) {
     return (
@@ -11,7 +12,7 @@ function Loader(props) {
             justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <i style={{fontSize: '35px', color: '#1a73e8'}} className="fa fa-spinner fa-spin"></i>
+            <i style={{fontSize: '35px', color: backgroundColor}} className="fa fa-spinner fa-spin"></i>
         </div>
     );
 }

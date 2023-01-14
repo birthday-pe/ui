@@ -4,6 +4,8 @@ import { Link, useParams } from 'react-router-dom';
 import { UserAddOutlined, WarningFilled } from '@ant-design/icons';
 import { getDocument } from '../firebase/db';
 import { users } from '../dbCollections';
+import logo  from '../../src/assets/logo.webp';
+import { backgroundColor, color } from '../App';
 
 function NavigationMenu(props) {
 
@@ -24,19 +26,20 @@ function NavigationMenu(props) {
 
     const [ activeInfo, setActiveInfo ] = useState(whichTab());
 
-    const [ dobExists, setDobExists ] = useState(true)
+    const [ dobExists, setDobExists ] = useState(true);
+
+    const _url = window.location.href;
     
 
     return (
         <div className={style.menu}>
           <Link to="/" 
-          className={style.link}
-         style={{fontSize: '28px', color: activeInfo == 'Home' ? '#1a73e8' : '#1a73e8'}}
+         style={{color: activeInfo == 'Home' ? '#1a73e8' : '#1a73e8', padding: '2px 15px'}}
           onClick={(e)=>{
             setActiveInfo('Home');
           }}
-          >BirthdayPe 
-          &nbsp;
+          >
+            <img style={{width: '140px', transform: 'translate(0px, 3px)'}} src={logo}/>
           </Link>
 
  
@@ -72,11 +75,25 @@ function NavigationMenu(props) {
           onClick={(e)=>{
             setActiveInfo('Blog');
           }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Blog</Link>
+
           {authenticated === null ? null :<Link to="/profile" 
           className={style.link}
           onClick={(e)=>{
             setActiveInfo('Hero');
-          }}><img src={user?.photoURL ? user.photoURL : 'https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'} style={{width: '40px', height: '40px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> }
+          }}><img src={user?.photoURL ? user.photoURL : 'https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'} style={{width: '37px', height: '37px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> }
+          {authenticated !== null || _url.includes('indi') ? null :<Link
+          style={{backgroundColor: '#1a73e8',
+          color: 'white',
+          marginRight: '15px',
+          borderRadius: '6px',
+          padding: '10px 15px',
+          color: backgroundColor,
+          backgroundColor: color
+        }}
+          to="/register-org"  
+          onClick={(e)=>{
+            setActiveInfo('Hero');
+          }}>Register</Link> }
         </div>
     );
 }

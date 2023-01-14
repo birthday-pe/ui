@@ -15,6 +15,7 @@ import Loader from '../Loader';
 import NavigationMenu from '../NavigationMenu';
 import Dashboard from '../../components/DashBoard';
 import DashBoard from '../../components/DashBoard';
+import { backgroundColor, color } from '../../App';
  
 const auth = getAuth();
 
@@ -111,14 +112,14 @@ function Individuals(props){
         </div> :
         loggedIn !== 'true'  ?
         <>
-          <div align="center" style={{display: !emailSent ? 'none' : 'block'}}>
+          <div align="center" style={{display: !emailSent ? 'none' : 'block', color: 'white'}}>
           <NavigationMenu authenticated={null} />
 
           <br/>
             <br/>
             <br/>
             <br/>  
-            <h2 style={{fontWeight: '500'}}>Email sent at <br/> <span style={{color: 'grey'}}>{window.localStorage.getItem(userSignInEmailKey)}</span></h2>
+            <h2 style={{fontWeight: '500', color: 'white'}}>Email sent at <br/> <span style={{color: backgroundColor}}>{window.localStorage.getItem(userSignInEmailKey)}</span></h2>
             <br/>
             You can close this window now
             <br/>
@@ -134,7 +135,7 @@ function Individuals(props){
             <br/>
             <br/> 
             <br/> 
-            <h1 style={{fontWeight: '500', color: 'grey'}}>Your birthday is a special time to celebrate the gift of 'you' to the world </h1>
+            <h1 style={{fontWeight: '500', color: backgroundColor}}>Your birthday is a special time to celebrate the gift of 'you' to the world </h1>
             <br/>
             <br/> 
             <br/>
@@ -148,11 +149,12 @@ function Individuals(props){
             }}/>
             <br/>
              <button
-              style={{ color: "#1a73e8", backgroundColor: "white" }}
+              style={{ color: color, backgroundColor: "white" }}
               onClick={()=>{
-                localStorage.setItem(userSignInEmailKey, email);
+                
                 sendSignInLinkToEmail(getAuth(), email, customActionCodeSettings(org)).then(res => {
                     setEmailSent(true);
+                    localStorage.setItem(userSignInEmailKey, email);
                 }).catch((err)=>{
                     toaster(0, err);
                 });
@@ -174,7 +176,7 @@ function Individuals(props){
             marginTop: "25vh",
           }}
         >
-          <h1>
+          <h1 style={{color: backgroundColor}}>
             &nbsp; &nbsp; Update Date of Birth
           </h1>
           <br />
@@ -186,7 +188,7 @@ function Individuals(props){
             style={{
               outline: "none",
               padding: "5px 10px",
-              borderRadius: "0px",
+              borderRadius: "6px",
               fontSize: "20px",
             }}
             onChange={(e) => {
@@ -204,7 +206,7 @@ function Individuals(props){
           <br />
           <div id="proceed_btn_div" style={{ display: "none" }}>
             <button
-              style={{ color: "#1a73e8", backgroundColor: "white" }}
+              style={{ color: color, backgroundColor: "white" }}
               onClick={proceed}
               id="proceed_btn"
               className={style.button}

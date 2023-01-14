@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   padding: 5px 15px;
-  background-color: white;
-  
+  background-color: #374151;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -38,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ytp-watermark.yt-uix-sessionlink.ytp-watermark-small {
+  display: none !important;
 }

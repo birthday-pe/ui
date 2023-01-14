@@ -8,6 +8,10 @@ import React, { useState } from "react";
 import style from "./LandingView.module.scss";
 import "./css/common.scss";
 import { Link } from "react-router-dom";
+import hpVid  from '../../src/assets/homepageVid.mp4';
+import bgGift  from '../../src/assets/bggift.svg';
+import { backgroundColor, color } from "../App";
+
 
 const rightSideBtnCss = {
   transform: "translate(0, 6px)",
@@ -22,66 +26,47 @@ const dateCss = {
 }
 
 function LandingView(props) {
-  const onParaClick = (id) => {
-    if (id != 5) {
-      document.getElementById(`${parseInt(id) + 1}`).scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   const [mode, setMode] = useState('left');
   
 
   return (
     <>
-    <h1 align="left" style={{fontWeight: '400'}} className={style.heading}>BirthdayPe</h1>
+   
       <div
         className={style["para-section"]}
-        onClick={(e) => {
-          onParaClick(e.target.id);
-        }}
-        onScroll={(e) => {
-          document.getElementById("2").scrollIntoView({
-            behavior: "smooth",
-          });
-          e.target.style.height = "auto";
-        }}
       >
-        <div className={style.para} id="1">
+        <div className={style.para} style={{
+          height: '100vh'
+        }}>
           <div 
-              align="center">
+              align="center"> 
             <h1
               align="center"
               style={{
-                backgroundColor: "#1a73e8",
+                backgroundColor: 'transparent',
                 fontWeight: "400",
-                fontSize: '27px',
+                fontSize: '33px',
                 width: "100vw",
-                color: "white",
+                color: backgroundColor,
                 marginLeft: "-15px",
                 marginTop: '0px',
                 padding: '10px 0px'
               }}
             >
-              We manage birthday celebrations for your employees
+              Elevate your employee morale with our birthday gift services
             </h1>
+            <span style={{color: 'white', fontSize: '20px'}}>Effortlessly integrated, effortlessly managed.</span><br/>
           
             
             {/* <span>Scroll &nbsp;&nbsp; <DownCircleFilled className={style['scroll-down-animation']} style={{color: '#1a73e8'}} /></span> */}
           </div>
         </div>
-      </div> 
-
-      <br/>
-
-
+      </div>     
+ 
         <div
           className={style.para}
           id="2"
-          onClick={(e) => {
-            onParaClick(e.target.id);
-          }}
         >
           <div
           align="center"
@@ -91,38 +76,65 @@ function LandingView(props) {
               fontWeight: "200",
             }}
           > 
-            <>
-            <br/>
-
-             <br/>
+            <> 
+   <h2
+              align="center"
+              style={{
+                backgroundColor: 'transparent',
+                fontWeight: "400",
+                fontSize: '33px',
+                width: "100vw",
+                color: backgroundColor,
+                marginLeft: "-15px",
+                marginTop: '0px',
+                padding: '10px 0px'
+              }}
+            >
+              Here is how it works
+            </h2>
+            <br/> 
               <Timeline align='left' style={{width: '80%'}} mode={mode}>
-                <Timeline.Item  style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Join us</span>}>
+                {/* <Timeline.Item  style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Join us</span>}>
                   Register your organisation with an easy two step process
                   <br/> 
                   <Link style={{fontWeight: '400'}}><sub>Register here</sub></Link>
                    <br/>
                    <br/>
-                </Timeline.Item>
-                <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Set up a Birthday Plan</span>}>
-                Setting up a plan is a one time process. Choose items from our riveting catalogue to add to the birthday plan for your employees, we take care of the smooth delivery, easy!!
-                   <br/>
-                   <br/>
-                   A birthday plan may include 
-                   <ul>
-                    <li>Scheduling Automatic Birthday Wishes</li>
-                    <li>Premium Gift Kits</li>
-                    <li>eGift Cards</li>
-                    <li>Product/Service Membership Plans</li>
-                    <li>Virtual Birthday Party</li> 
-                   </ul>   
-                  <Link to={'/gifts'} style={{fontWeight: '400'}}><sub>Visit Catalogue</sub></Link>
-                   <br/>
+                </Timeline.Item> */}
+                <Timeline.Item color={backgroundColor} style={{fontSize: '20px', color: 'white'}} label={<span style={{...dateCss}}>Select Gift Items
+            
+                </span>}>
+                After registering your organization with us, you(as an admin) just have to choose the gift items from our riveting catalogue and we will take care of the sourcing and sending of the gifts.
+                   <br/> 
+                   <br/> 
+                   <Link to={'/gifts'} style={{fontWeight: '300', color: backgroundColor}}>Visit Gifts Catalogue</Link> to order free sample gifts
+                  
+                   
+                  <br/> 
                    <br/>
                 </Timeline.Item>
-                
-                <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Sit Back</span>}>
-                  We deliver, without failure, on the birthday of every employee, as per your plan
+                <Timeline.Item color={backgroundColor}  style={{fontSize: '20px', color: 'white'}} label={<span style={{...dateCss}}>Onboard Interested Employees</span>}>
+                  We will not ask for any personal details of your employees other than their data of birth
+                  <br/>
+                  <br/> 
+                  Employees will be eligible for receiving BirthdayPe gifts once they verify their work/company email
+                  <br/> 
+                  <br/> 
+                 
                 </Timeline.Item>
+                <Timeline.Item  color={backgroundColor}  style={{fontSize: '20px', color: 'white'}} label={<span style={{...dateCss}}>Gifts Dispatching</span>}>
+                  Before dispatching a gift-pack for any of the employees, we seek confirmation from the employee by contacting them via email, requesting them to update us with their current address.
+                   <br/>
+                   <br/>
+                </Timeline.Item>
+                <Timeline.Item color={backgroundColor}  style={{fontSize: '20px', color: 'white'}} label={<span style={{...dateCss}}>Fee</span>}>
+                  Pay as low as 3% percentage of total order value per gift dispatched. 
+                   <br/>
+                   <br/>
+                </Timeline.Item>
+                {/* <Timeline.Item style={{fontSize: '20px'}} label={<span style={{...dateCss}}>Sit Back</span>}>
+                  We deliver, without failure, on the birthday of every employee, as per your gift pack plan
+                </Timeline.Item> */}
               </Timeline>
             </>  
            
@@ -139,6 +151,35 @@ function LandingView(props) {
             <br/> 
             
             <br/> 
+            <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}>
+         <div align="left">
+          {/* <sub style={{color: backgroundColor}}>This is an AI generated video</sub> */}
+          <br/>  
+      <video src={hpVid}
+      style={{
+        width: '40vw',
+        height: '16.6vw',
+        borderRadius: '9px'
+      }} controls></video>
+      </div>
+
+          {/* <div style={{ fontWeight: "200", width: '98vw'}}>
+              <h2 style={{ fontWeight: "500", color: "white" }}>
+              Why do most companies <span style={{color: backgroundColor}}>NOT</span> send birthday gifts to employees?
+              </h2>
+         
+
+
+              </div>  */}
+       
+    
+           </div>   
+
         
 
       <div
@@ -151,8 +192,8 @@ function LandingView(props) {
             >
             
               <span style={{ fontWeight: "200", width: '40vw'}}>
-              <h1 style={{ fontWeight: "500", color: "#1a73e8" }}>Gifts!</h1>
-              <span style={{ fontWeight: "200", fontSize: '20px'}}>We offer a wide selection of unique and thoughtful items for all age
+              <h1 style={{ fontWeight: "400", color: backgroundColor }}>Gifts!</h1>
+              <span style={{ fontWeight: "200", fontSize: '20px', color: 'white'}}>We offer a wide selection of unique and thoughtful items for all age
           groups.
           <br/>
           From personalized gifts to fun and creative ideas, we have
@@ -162,8 +203,8 @@ function LandingView(props) {
               </span>
 
               <span style={{ fontWeight: "200", width: '40vw'}}>
-              <h1 align="right" style={{ fontWeight: "500", color: "#1a73e8" }}>Visit our blog</h1>
-          <div align="right"  style={{ fontWeight: "200", fontSize: '20px'}}>Collection of ideas to make your birthday celebration extra special.
+              <h1 align="right" style={{ fontWeight: "400", color: backgroundColor }}>Visit our blog</h1>
+          <div align="right"  style={{ fontWeight: "200", fontSize: '20px', color: 'white'}}>Collection of ideas to make your birthday celebration extra special.
           <br /> Our blogs are a great resource for inspiration and tips on how to
           plan the perfect virtual or in-person party.</div>
           <br />  
@@ -185,10 +226,10 @@ function LandingView(props) {
             >
             
               <span style={{ width: '40vw'}}>
-                <h1 style={{ fontWeight: "500", color: "#1a73e8" }}>
+                <h1 style={{ fontWeight: "400", color: "silver" }}>
                   Contant us
                 </h1>
-                <div style={{color: 'grey'}}>
+                <div style={{color: "silver"}}>
                   <PhoneOutlined /> +91 8126153920
                   <br/>
                   <InstagramOutlined /> &nbsp; bithday.pe
@@ -200,8 +241,7 @@ function LandingView(props) {
               <span style={{ fontWeight: "200", width: '40vw'}}></span>
               {/* <img src={steps} style={{ width: "400px" }}></img> */}
             </div>
-      
-
+   
       {/* <div
         className={style.para}
         id="5"

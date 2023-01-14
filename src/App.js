@@ -13,6 +13,11 @@ import Blog from './components/blogs/Blog';
 import { Col, Row } from 'antd';
 import Individuals from './components/userSignup/Individuals';
 import Catalogue from './components/catalogue/Catalogue';
+import NavigationMobile from './components/mobile/NavigationMobile';
+import LandingViewMobile from './components/mobile/LandingViewMobile';
+
+export const backgroundColor = '#00FFEF';
+export const color = '#374151';
  
 function App() {
 
@@ -37,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Row>
-        <Col md={{span: 24}} xs={{span: 24}}>
+        <Col md={{span: 24}} xs={{span: 0}}>
           {getUserLoggedInStatus() === 'true' ?
     <>
         <BrowserRouter>
@@ -93,16 +98,68 @@ function App() {
       </BrowserRouter>}
         </Col>
 
-        {/* <Col md={{span: 24}} xs={{span: 24}}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh'
-          }}>
-            <h3>Mobile version is under construction</h3>
-          </div>
-        </Col> */}
+
+
+
+
+
+
+
+         <Col md={{span: 0}} xs={{span: 24}}>
+         {getUserLoggedInStatus() === 'true' ?
+    <>
+        <BrowserRouter>
+        <NavigationMobile />
+        <Routes> 
+        <Route exact path="/" element={<>
+           <LandingViewMobile  />
+          </>} /> 
+          <Route exact path="/registerCompany" element={<>
+           <LandingView  />
+          </>} /> 
+           <Route path="/:org/indi" element={<>
+           <Individuals/>
+          </>} />
+          <Route path="/blog" element={<>
+            <Blogs/>
+          </>} />
+          <Route path="/blog/:id" element={<>
+            <Blog/>
+          </>} />
+          <Route path="/profile" element={<>
+            <Profile user={user === {} ? null : user} />
+          </>} />
+          <Route path="/gifts" element={<>
+            <Catalogue />
+          </>} />
+        </Routes>
+      </BrowserRouter>
+      </>
+    :
+    <BrowserRouter>
+        <NavigationMenu authenticated={null} />
+        <Routes> 
+        <Route exact path="/" element={<>
+           <LandingView  />
+          </>} /> 
+           <Route path="/:org/indi" element={<>
+           <Individuals/>
+          </>} />
+          <Route path="/blog" element={<> 
+            <Blogs/>
+          </>} />
+          <Route path="/blog/:id" element={<> 
+            <Blog/>
+          </>} />
+          <Route path="/profile" element={<>
+            <Individuals/>
+          </>} />
+          <Route path="/gifts" element={<>
+            <Catalogue />
+          </>} />
+          </Routes>
+      </BrowserRouter>}
+        </Col>  
 
       </Row>
       </div> 
