@@ -87,6 +87,9 @@ function Individuals(props){
 
 
   const proceed = () => {
+    if(dob == null) {
+      toaster(0, 'Invalid input');
+    } else {
     document.getElementById("proceed-btn-loader").style.display =
                   "inline-block";
                 updateOrCreateDocument(org, userEmail, { dob: dob, author: window.localStorage.getItem(userSignInEmailKey) })
@@ -101,6 +104,7 @@ function Individuals(props){
                   .catch(() => {
                     toaster(0, somethingWentWrong);
                   });
+                }
 }
  
     return ( 
@@ -135,7 +139,7 @@ function Individuals(props){
             <br/>
             <br/> 
             <br/> 
-            <h1 style={{fontWeight: '500', color: backgroundColor}}>Your birthday is a special time to celebrate the gift of 'you' to the world </h1>
+            <h1 style={{fontWeight: '500', color: backgroundColor}}>Birthday is a special time to celebrate the gift of 'you' to the world </h1>
             <br/>
             <br/> 
             <br/>
@@ -177,19 +181,24 @@ function Individuals(props){
           }}
         >
           <h1 style={{color: backgroundColor}}>
-            &nbsp; &nbsp; Update Date of Birth
+             When is your birthday?
           </h1>
+          <h3 style={{fontWeight: '400', color: 'white'}}>
+            We do not ask for the year of birth
+          </h3>
           <br />
 
           <br />
           <DatePicker
-            format={"DD/MM/YYYY"}
+            placeholder='Select Date & Month'
+            format={"DD MMM"}
             size="large"
             style={{
               outline: "none",
               padding: "5px 10px",
               borderRadius: "6px",
               fontSize: "20px",
+              width: '300px'
             }}
             onChange={(e) => {
               if (e != null) {
@@ -204,7 +213,7 @@ function Individuals(props){
           <br />
           <br />
           <br />
-          <div id="proceed_btn_div" style={{ display: "none" }}>
+          <div id="proceed_btn_div" style={{ display: "block" }}>
             <button
               style={{ color: color, backgroundColor: "white" }}
               onClick={proceed}

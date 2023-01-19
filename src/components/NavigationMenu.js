@@ -32,6 +32,16 @@ function NavigationMenu(props) {
     
 
     return (
+      _url.includes('indi') ? <div className={style.menu}>
+      <Link to="/" 
+     style={{color: activeInfo == 'Home' ? '#1a73e8' : '#1a73e8', padding: '2px 15px'}}
+      onClick={(e)=>{
+        setActiveInfo('Home');
+      }}
+      >
+        <img style={{width: '140px', transform: 'translate(0px, 3px)'}} src={logo}/>
+      </Link>
+      </div> :
         <div className={style.menu}>
           <Link to="/" 
          style={{color: activeInfo == 'Home' ? '#1a73e8' : '#1a73e8', padding: '2px 15px'}}
@@ -65,23 +75,27 @@ function NavigationMenu(props) {
           }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Dashboard</Link>} */}
 
 {<Link to="/gifts" 
+style={{transform: 'translate(35px,0px )'}}
           className={ activeInfo == 'Gifts' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Gifts');
           }}><span style={{opacity: activeInfo == 'Gifts' ? 1 : 0}}> </span>Catalogue</Link>}
           
          <Link to="/blog"
+style={{transform: 'translate(-10px,0px )'}}
+
           className={ activeInfo == 'Blog' ? style['link-selected'] : style.link}
           onClick={(e)=>{
             setActiveInfo('Blog');
           }}><span style={{opacity: activeInfo == 'Blog' ? 1 : 0}}> </span>Blog</Link>
 
-          {authenticated === null ? null :<Link to="/profile" 
+          {/* {authenticated === null ? null :<Link to="/profile" 
           className={style.link}
+          style={{margin: '0px'}}
           onClick={(e)=>{
             setActiveInfo('Hero');
-          }}><img src={user?.photoURL ? user.photoURL : 'https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'} style={{width: '37px', height: '37px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> }
-          {authenticated !== null || _url.includes('indi') ? null :<Link
+          }}><img src={user?.photoURL ? user.photoURL : 'https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'} style={{width: '37px', height: '37px', borderRadius: '50%', marginBottom: '-7px'}}></img></Link> } */}
+          {/* {authenticated !== null || _url.includes('indi') ? null :<Link
           style={{backgroundColor: '#1a73e8',
           color: 'white',
           marginRight: '15px',
@@ -93,7 +107,7 @@ function NavigationMenu(props) {
           to="/register-org"  
           onClick={(e)=>{
             setActiveInfo('Hero');
-          }}>Register</Link> }
+          }}>Register</Link> } */}
         </div>
     );
 }

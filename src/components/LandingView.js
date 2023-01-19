@@ -12,6 +12,8 @@ import hpVid  from '../../src/assets/homepageVid.mp4';
 import bgGift  from '../../src/assets/bggift.svg';
 import { backgroundColor, color } from "../App";
 
+              {/* there is a mobile version too, so make the change there too */}
+
 
 const rightSideBtnCss = {
   transform: "translate(0, 6px)",
@@ -54,9 +56,23 @@ function LandingView(props) {
                 padding: '10px 0px'
               }}
             >
-              Elevate your employee morale with our birthday gift services
+                 Employee birthday gifting with our 5-minute setup solution
             </h1>
-            <span style={{color: 'white', fontSize: '20px'}}>Effortlessly integrated, effortlessly managed.</span><br/>
+    
+
+<h4 className={style.wordCarousel}>
+    <div>
+        {/* <!-- Use classes 2,3,4, or 5 to match the number of words --> */}
+        <ul className={style.flip5}>
+            <li>Effortlessly Integrated  🔗</li>
+            <li>Efficiently Managed 🌈</li>
+            <li>Effortlessly Integrated  🎉</li>
+            <li>Efficiently Managed ✨</li>
+            <li>Effortlessly Integrated  🎁</li>
+            <li>Efficiently Managed 🎂</li>
+        </ul>
+    </div>
+</h4>
           
             
             {/* <span>Scroll &nbsp;&nbsp; <DownCircleFilled className={style['scroll-down-animation']} style={{color: '#1a73e8'}} /></span> */}
@@ -157,8 +173,8 @@ function LandingView(props) {
         justifyContent: 'space-around',
         alignItems: 'center',
       }}>
-         <div align="left">
-          {/* <sub style={{color: backgroundColor}}>This is an AI generated video</sub> */}
+         {/* <div align="left">
+         
           <br/>  
       <video src={hpVid}
       style={{
@@ -166,7 +182,7 @@ function LandingView(props) {
         height: '16.6vw',
         borderRadius: '9px'
       }} controls></video>
-      </div>
+      </div> */}
 
           {/* <div style={{ fontWeight: "200", width: '98vw'}}>
               <h2 style={{ fontWeight: "500", color: "white" }}>

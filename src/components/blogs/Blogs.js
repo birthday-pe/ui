@@ -22,7 +22,10 @@ function Blogs(props) {
                 arr.push({title: doc.data().title, id: doc.id})
             });
 
-            setBlogs(arr);
+            setTimeout(()=>{
+                setBlogs(arr);
+
+            }, 600)
 
          }) 
     }, [])

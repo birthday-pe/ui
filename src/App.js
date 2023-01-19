@@ -15,6 +15,9 @@ import Individuals from './components/userSignup/Individuals';
 import Catalogue from './components/catalogue/Catalogue';
 import NavigationMobile from './components/mobile/NavigationMobile';
 import LandingViewMobile from './components/mobile/LandingViewMobile';
+import CatalogueMobile from './components/mobile/CatalogueMobile';
+import Admin from './components/admin/Admin';
+import AdminDashboard from './components/admin/Catalogue';
 
 export const backgroundColor = '#00FFEF';
 export const color = '#374151';
@@ -26,6 +29,7 @@ function App() {
 
   const [ userDocUpdated, setUserDocUpdated ] = useState(false);
 
+
   useEffect(() => {
     // get Current User Information
     if(getUserLoggedInStatus() === 'true'){
@@ -34,6 +38,7 @@ function App() {
         console.log(data);
       });
     }
+
   }, [])
  
 
@@ -41,7 +46,9 @@ function App() {
 
   return (
     <div className="App">
+    
       <Row>
+        {/* there is a mobile version too, written in another col below */}
         <Col md={{span: 24}} xs={{span: 0}}>
           {getUserLoggedInStatus() === 'true' ?
     <>
@@ -54,9 +61,6 @@ function App() {
           <Route exact path="/registerCompany" element={<>
            <LandingView  />
           </>} /> 
-           <Route path="/:org/indi" element={<>
-           <Individuals/>
-          </>} />
           <Route path="/blog" element={<>
             <Blogs/>
           </>} />
@@ -69,6 +73,12 @@ function App() {
           <Route path="/gifts" element={<>
             <Catalogue />
           </>} />
+          <Route path="/:org/admin" element={<>
+           <Admin/>
+          </>} />
+          <Route path="/:org/indi" element={<>
+           <Individuals/>
+          </>} />
         </Routes>
       </BrowserRouter>
       </>
@@ -79,9 +89,6 @@ function App() {
         <Route exact path="/" element={<>
            <LandingView  />
           </>} /> 
-           <Route path="/:org/indi" element={<>
-           <Individuals/>
-          </>} />
           <Route path="/blog" element={<> 
             <Blogs/>
           </>} />
@@ -92,7 +99,13 @@ function App() {
             <Individuals/>
           </>} />
           <Route path="/gifts" element={<>
-            <Catalogue />
+          <Catalogue />
+          </>} />
+          <Route path="/:org/admin" element={<>
+           <Admin/>
+          </>} />
+          <Route path="/:org/indi" element={<>
+           <Individuals/>
           </>} />
           </Routes>
       </BrowserRouter>}
@@ -101,7 +114,7 @@ function App() {
 
 
 
-
+{/* mobile */}
 
 
 
@@ -115,7 +128,8 @@ function App() {
            <LandingViewMobile  />
           </>} /> 
           <Route exact path="/registerCompany" element={<>
-           <LandingView  />
+            <LandingViewMobile  />
+
           </>} /> 
            <Route path="/:org/indi" element={<>
            <Individuals/>
@@ -130,17 +144,27 @@ function App() {
             <Profile user={user === {} ? null : user} />
           </>} />
           <Route path="/gifts" element={<>
-            <Catalogue />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+            <AdminDashboard />
+          </>} />
+          <Route path="/:org/admin" element={<>
+           <Admin/>
+          </>} />
+          <Route path="/:org/indi" element={<>
+           <Individuals/>
           </>} />
         </Routes>
       </BrowserRouter>
       </>
     :
     <BrowserRouter>
-        <NavigationMenu authenticated={null} />
+        <NavigationMobile authenticated={null} />
         <Routes> 
         <Route exact path="/" element={<>
-           <LandingView  />
+          <LandingViewMobile  />
           </>} /> 
            <Route path="/:org/indi" element={<>
            <Individuals/>
@@ -155,7 +179,17 @@ function App() {
             <Individuals/>
           </>} />
           <Route path="/gifts" element={<>
-            <Catalogue />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+            <AdminDashboard />
+          </>} />
+          <Route path="/:org/admin" element={<>
+           <Admin/>
+          </>} />
+          <Route path="/:org/indi" element={<>
+           <Individuals/>
           </>} />
           </Routes>
       </BrowserRouter>}

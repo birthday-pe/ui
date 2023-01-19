@@ -69,7 +69,7 @@ function LandingViewMobile(props) {
       <div className={style["para-section"]}>
         <div className={style.para} style={{}}>
           <div align="center">
-            <h1
+            <h2
               align="center"
               style={{
                 backgroundColor: "transparent",
@@ -82,11 +82,21 @@ function LandingViewMobile(props) {
                 width: "90%",
               }}
             >
-              Elevate your employee morale with our birthday gift services
-            </h1>
-            <span style={{ color: "white", fontSize: "20px" }}>
-              Efficiently integrated, effortlessly managed.
-            </span>
+              Employee birthday gifting <br/> with our one time <br/> 5-minute setup
+            </h2>
+            <h4 className={style.wordCarousel}>
+    <div>
+        {/* <!-- Use classes 2,3,4, or 5 to match the number of words --> */}
+        <ul className={style.flip5}>
+            <li>Effortlessly Integrated  🔗</li>
+            <li>Efficiently Managed 🌈</li>
+            <li>Effortlessly Integrated  🎉</li>
+            <li>Efficiently Managed ✨</li>
+            <li>Effortlessly Integrated  🎁</li>
+            <li>Efficiently Managed 🎂</li>
+        </ul>
+    </div>
+</h4>
             <br />
 
             {/* <span>Scroll &nbsp;&nbsp; <DownCircleFilled className={style['scroll-down-animation']} style={{color: '#1a73e8'}} /></span> */}

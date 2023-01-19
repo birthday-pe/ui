@@ -14,7 +14,7 @@ export const toaster = (type, message) => {
               console.log('Notification Clicked!');
             },
             duration: 2,
-            placement: 'top'
+            placement: 'center'
 
           });
     }
@@ -27,7 +27,7 @@ export const toaster = (type, message) => {
               console.log('Notification Clicked!');
             },
             duration: 2,
-            placement: 'top'
+            placement: 'center'
           });
     }
 }

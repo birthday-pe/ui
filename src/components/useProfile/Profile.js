@@ -11,7 +11,7 @@ function Profile(props) {
     return (
         user ?
         <div className={style.flexbox}>
-            <h2 className={style.nameHead} style={{color: color}}>{user.displayName}<br/><sub style={{color: 'white'}}>We hope you're enjoying your stay</sub></h2>
+            <h2 className={style.nameHead} style={{color: backgroundColor}}>{user.displayName}<br/><sub style={{color: 'white'}}>We hope you're enjoying your stay</sub></h2>
              
             <div style={{cursor: 'pointer', color: 'white'}} onClick={()=>{
                 logout();

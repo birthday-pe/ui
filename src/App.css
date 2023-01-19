@@ -5,6 +5,15 @@
   min-height: 100vh;
 }
 
+*{
+  font-family: 'Domine' !important;
+}
+
+.username {
+  font-family: 'Great Vibes' !important;
+  font-size:larger;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -42,4 +51,16 @@
 
 .ytp-watermark.yt-uix-sessionlink.ytp-watermark-small {
   display: none !important;
+}
+
+.ant-picker-year-btn {
+  display: none;
+}
+
+.ant-picker-header-super-prev-btn{
+  display: none;
+}
+
+.ant-picker-header-super-next-btn{
+  display: none;
 }

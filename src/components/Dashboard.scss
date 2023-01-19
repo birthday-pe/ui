@@ -1,0 +1,47 @@
+#dboard{
+  input, label {
+    margin: 5px 5px;
+    padding: 10px 10px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+  
+  .form-group {
+    margin-top: 25vh;
+    width: 450px;
+  }
+
+  .form-group-mobile{
+    margin-top: 25vh; 
+    transform: scale(0.8);
+  }
+  
+  .form-control {
+    float: left;
+  }
+  
+  #street {
+    width: 100%;
+  }
+  
+  #city {
+    width: 50%;
+  }
+  
+  #state {
+    width: 15%;
+  }
+  
+  #zip {
+    width: 28%;
+  }
+ 
+  #country {
+    width: 50%;
+  }
+  #contactNumber {
+    width: 80%;
+  }
+}
