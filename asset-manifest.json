@@ -1,24 +1,25 @@
 {
   "files": {
     "main.css": "/ui/static/css/main.fc612eae.css",
-    "main.js": "/ui/static/js/main.676702e2.js",
+    "main.js": "/ui/static/js/main.77202e3f.js",
     "static/js/787.349b0e60.chunk.js": "/ui/static/js/787.349b0e60.chunk.js",
     "static/media/homepageVid.mp4": "/ui/static/media/homepageVid.cbbc3d1e456f1a8d13ee.mp4",
-    "static/media/stationary.png": "/ui/static/media/stationary.1e0d32b75b412b5741e4.png",
+    "static/media/collage.png": "/ui/static/media/collage.274e6a6c7c7f0aab949c.png",
     "static/media/bathingsalt.png": "/ui/static/media/bathingsalt.f09760d40e375c548a64.png",
+    "static/media/hbd.png": "/ui/static/media/hbd.bf8d93e80a64fce44281.png",
     "static/media/dryfruits.png": "/ui/static/media/dryfruits.108573f605df42d786f5.png",
-    "static/media/card.png": "/ui/static/media/card.3512ed9cb789a8158f9a.png",
+    "static/media/stationary.png": "/ui/static/media/stationary.81ca91b78c02ea0725b7.png",
     "static/media/bottle.png": "/ui/static/media/bottle.3c37ffd70c9b15c961e0.png",
     "static/media/bggift_mobile.svg": "/ui/static/media/bggift_mobile.d0817292ff37968885915cda30907b1b.svg",
     "static/media/logo.webp": "/ui/static/media/logo.bafae6a4669d4174010e.webp",
     "static/media/congrats.svg": "/ui/static/media/congrats.0068a093e75b67f722f1b8adf64b0085.svg",
     "index.html": "/ui/index.html",
     "main.fc612eae.css.map": "/ui/static/css/main.fc612eae.css.map",
-    "main.676702e2.js.map": "/ui/static/js/main.676702e2.js.map",
+    "main.77202e3f.js.map": "/ui/static/js/main.77202e3f.js.map",
     "787.349b0e60.chunk.js.map": "/ui/static/js/787.349b0e60.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc612eae.css",
-    "static/js/main.676702e2.js"
+    "static/js/main.77202e3f.js"
   ]
 }
